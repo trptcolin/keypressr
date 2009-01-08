@@ -1,0 +1,2 @@
+- unless @languages.nil?
+  = @languages.map{ |l| link_to(l.name, url(:home, :language => l.name)) }.join(" / ")

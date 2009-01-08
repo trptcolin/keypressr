@@ -1,0 +1,17 @@
+%p
+  = link_to "+ Add Code", "/texts/new"
+
+%h1 Texts
+
+- if @texts.nil? or @texts.empty?
+  %p There are no texts at this time.
+- else
+  - for language in @languages
+    %h2 
+      = language.name
+    %ul
+    - for text in language.texts
+      %li
+        = link_to text.attachment.original_filename, text.attachment.url
+        \-
+        = link_to "Destroy", "/texts/destroy/#{text.id}"

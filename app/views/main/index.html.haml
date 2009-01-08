@@ -1,0 +1,25 @@
+- require_js "jquery.js"
+- require_js "jquery.timers.js"
+- require_js "jquery.scrollto.js"           
+- require_js "keypressr.js"
+
+- if @example_text  
+  %form#typing-test
+    #wrapper
+      ~ "<pre name='test-text' id='test-text' class='code'>#{h @example_text}</pre>"
+      #overlay
+
+      %textarea#response-text.code{ :name => "response-text" }
+  
+    %input#example-text{:type => 'hidden', :value => @example_text} 
+    
+    #results
+
+  %script{:type => "text/javascript"}
+    $("#response-text").html("");
+  
+  #time-elapsed
+    =@elapsed_time
+
+- else
+  %p There are no code samples at this time.

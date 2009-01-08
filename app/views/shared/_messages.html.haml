@@ -1,0 +1,7 @@
+- if message[:error]
+  .notice#error
+    = message[:error]
+
+- if message[:notice]
+  .notice#success
+    = message[:notice]

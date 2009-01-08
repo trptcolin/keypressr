@@ -1,0 +1,33 @@
+version 0.05
+
+===========
+== AUTHOR: Colin Jones
+
+===========
+== TODO:
+===========
+DONE- build backend for texts
+DONE- properly escape displayed html (except for /<span class="(in)?correct"><\/span>/
+DONE- allow only one finish that triggers a stop of the timer
+DONE- vary texts randomly (but obviously cache for the session)
+DONE- add openID and login concepts for users
+DONE- allow users to add texts
+DONE- fix error message when adding texts
+DONE- move validations of line lengths to text upload
+DONE- design logo
+DONE- ? keep track of low times (on a per-text basis)
+DONE- add or display fastest times upon completion
+DONE- disable pasting text into input box / position transparent PNG over example text
+DONE- convert tabs to spaces on text upload
+DONE- choose language to use
+DONE- change Finished message depending on if the score made the top times or not
+- style languages page
+- clean up logo: longer finger? skinnier hand?
+- favicon with "the P"
+- populate code samples on live site
+- set up production environment
+
+- link up login/signup option
+- limit addition of languages to admin user
+- provide link for any user to add a text
+

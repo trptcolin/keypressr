@@ -1,0 +1,7 @@
+%p
+  = select :language_id, :collection => @languages.map{|l|[l.id, l.name]}
+%p 
+  %strong
+    Note: Code samples cannot include lines with more than 80 characters, in order to avoid wrapping.
+%p
+  = file_field :name => 'attachment', :label => "Code Sample"

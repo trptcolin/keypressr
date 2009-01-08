@@ -1,0 +1,30 @@
+- if @best_times.include?(@this_time)
+  %h1 Top score! 
+  %p
+    %strong
+      Nice keypressing!
+- else
+  %h1 Oh well... 
+  %p
+    %strong
+      Keep keypressing!
+
+%p
+  %strong
+    You finished it in 
+    = @elapsed_time
+    seconds.
+
+- unless @best_times.empty?
+  %h1 Best Times (for this code snippet) 
+  %ol
+    - @best_times.each do |time|
+      %li
+        = "<strong>" if time==@this_time
+        = time.duration
+        - if time.user and time.user.name
+          == (#{time.user.name})
+        - else
+          (Anonymous)
+        = "</strong>" if time==@this_time
+      

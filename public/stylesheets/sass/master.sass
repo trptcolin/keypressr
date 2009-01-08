@@ -1,0 +1,225 @@
+=default-font
+  :font
+    :family Arial, Verdana, sans-serif
+    :size 14px
+    
+=wrapper-element
+  min-width: 700px
+  width: 80%
+  padding-left: 5%
+  padding-right: 5%
+  text-align: left
+  margin-right: auto
+  margin-left: auto
+
+body
+  +default-font
+  background-color: #AAA
+
+*
+  margin: 0px
+  padding: 0px
+  text-decoration: none
+
+html
+  height: 100%
+  margin-bottom: 1px
+
+option
+  padding-right: 15px
+
+#container
+  +wrapper-element
+  background-color: #fff
+  padding-top: 20px
+  padding-bottom: 20px
+  border-top: 20px solid #666
+
+#footer
+  +wrapper-element
+  background-color: #CCC
+  padding-top: 10px
+  padding-bottom: 10px
+  border-top: 20px solid #666
+
+#header-container
+  width: 100%
+  border-bottom: 3px solid #AAA
+
+#header-container h1, #header-container h2
+  margin-left: 6px
+  margin-bottom: 6px
+
+#logo
+  margin-right: 20px
+  margin-bottom: 20px
+  float: left
+  
+#pick_language
+  padding: 10px
+
+#nav ul
+  padding-right: 0
+#nav li
+  float: right
+  margin-top: 10px
+  margin-right: 20px
+  list-style: none
+  
+#nav li.last
+  margin-right: 0
+
+#nav li a
+  display: block
+  padding: 10px
+
+#nav li a:hover
+  background: #E5E5E5
+  text-decoration: none
+
+.clear
+  clear: both
+
+.spacer
+  width: 100%
+  height: 15px
+
+hr
+  border: 0px
+  color: #ccc
+  height: 1px
+  width: 100%
+  text-align: left
+
+h1  
+  +default-font
+  font-size: 1.6em
+  color: #BB3B0E
+  font-weight: 300
+  padding: 5px
+
+h2  
+  +default-font
+  font-size: 15px
+  color: #999
+  font-weight: 300
+
+h3
+  color: #4d9b12
+  font-size: 15px
+  text-align: left
+  font-weight: 300
+  padding: 5px
+  margin-top: 5px
+
+
+#left-container
+  float: left
+  width: 250px
+  background-color: #FFFFFF
+  color: black
+
+
+#left-container h3
+  color: #c55
+
+
+#main-container
+  margin: 5px 5px 5px 260px
+  padding: 15px
+  border-left: 1px solid silver
+  min-height: 400px
+
+p
+  color: #000
+  line-height: 20px
+  padding: 5px
+
+a
+  color: #03A40B
+  background-color: transparent
+  text-decoration: none
+  font-weight: bold
+
+a:hover
+  color: #03A40B
+  background-color: #CCC
+  text-decoration: underline
+
+img
+  border: 0
+
+#footer-container
+  clear: both
+  +default-font
+
+.right
+  float: right
+  font-size: 100%
+  margin-top: 5px
+  color: #999
+
+.left
+  float: left
+  font-size: 100%
+  margin-top: 5px
+  color: #999
+
+#main-container ul
+  margin-left: 3.0em
+
+.code  
+  border: 1px solid #CCC
+  padding: 5px
+  margin: 10px 0
+  background-color: #EFEFEF
+  width: 98%
+  height: 120px
+  overflow: hidden
+  font-family: Courier, monospace
+  font-size: 16px
+  
+
+#response-text
+  overflow: auto
+  position: relative
+
+#test-text
+  color: #000
+  position: relative
+  z-index: 1
+
+#wrapper
+  position: relative
+
+#overlay
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 120px
+  z-index: 2
+  
+.correct
+  color: #CCC
+  
+.incorrect
+  color: #8D3110
+
+
+
+#time-elapsed
+  width: 25%
+
+.notice
+  padding: 5px
+  border: 1px solid #AAA
+
+.notice#error
+  background: #FBB
+
+.notice#success
+  background: #AFA
+
+input.file
+  display: block
