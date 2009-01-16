@@ -1,7 +1,7 @@
 class Users < Application
 
-  # ...and remember, everything returned from an action
-  # goes to the client...
+  before :ensure_authenticated
+
   def index
     render
   end

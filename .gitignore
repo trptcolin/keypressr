@@ -3,3 +3,4 @@ public/attachments
 log/*.log
 .DS_Store
 config/database.yml
+.*.swp
