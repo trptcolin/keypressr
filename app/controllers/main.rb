@@ -4,6 +4,10 @@ class Main < Application
   
   def index
     @homepage = true
+    render
+  end
+
+  def game
   
     @language = Language.first(:name => params[:language])
 
