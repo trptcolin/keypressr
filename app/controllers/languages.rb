@@ -4,7 +4,7 @@ class Languages < Application
   before :ensure_admin, :exclude => [:index]
   
   def index
-    @languages = Language.all.sort_by{ |l| l.name }
+    @all_languages = Language.all.sort_by{ |l| l.name }
     render
   end
   

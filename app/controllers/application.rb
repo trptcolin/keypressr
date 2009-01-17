@@ -9,10 +9,7 @@ class Application < Merb::Controller
   end
   
   def get_languages_with_code
-    # @languages = Language.find_by_sql("SELECT languages.*, texts.* FROM languages LEFT JOIN texts ON languages.id=texts.language_id")
-    @languages = Language.find_by_sql("SELECT languages.*, texts.* FROM languages INNER JOIN texts WHERE languages.id = texts.language_id")
-    
-    # all(:includes => [:texts], :texts.not => [])
+    @languages = Language.all.sort_by{|l| l.name}.uniq.delete_if{|l| l.texts.empty?}
   end
 
   def get_current_user

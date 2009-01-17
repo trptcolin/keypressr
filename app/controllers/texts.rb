@@ -8,7 +8,7 @@ class Texts < Application
   # goes to the client...
   def index
     @texts = Text.all
-    @languages = @texts.map{|t| t.language}.compact.uniq
+    @languages_with_code = @texts.map{|t| t.language}.compact.uniq
     render
   end
   
