@@ -3,7 +3,7 @@
 
 %h1 Texts
 
-- if @texts.nil? or @texts.empty?
+- if @languages.nil? or @languages.empty? or @texts.nil? or @texts.empty?
   %p There are no texts at this time.
 - else
   - for language in @languages

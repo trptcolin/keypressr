@@ -1,13 +1,14 @@
 class Texts < Application
 
   before :ensure_authenticated
-  before :get_languages
+  before :ensure_admin
+  before :get_all_languages
   
   # ...and remember, everything returned from an action
   # goes to the client...
   def index
     @texts = Text.all
-    @languages = @texts.map{|t| t.language}.uniq
+    @languages = @texts.map{|t| t.language}.compact.uniq
     render
   end
   
@@ -17,7 +18,7 @@ class Texts < Application
   end
   
   def edit
-    @text = Text.find(params[:id])
+    @text = Text.first(:id => params[:id])
     render
   end
   

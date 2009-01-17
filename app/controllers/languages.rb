@@ -1,5 +1,7 @@
 class Languages < Application
-  before :ensure_authenticated, :only => [:new, :edit, :create, :destroy]
+
+  before :ensure_authenticated
+  before :ensure_admin, :exclude => [:index]
   
   def index
     @languages = Language.all.sort_by{ |l| l.name }
@@ -21,7 +23,7 @@ class Languages < Application
 
   	if @language.save
   		message[:notice] = "Language saved successfully!"
-  		redirect "languages/index"
+  		redirect "/languages/index"
   	else
       # debugger
   		message[:error] = "There was a problem saving the language: #{@language.errors.full_messages}"
@@ -36,6 +38,6 @@ class Languages < Application
   def destroy
     @language = Language.first(:id => params[:id])    
     @language.destroy
-    redirect "languages/index"
+    redirect "/languages/index"
   end
 end

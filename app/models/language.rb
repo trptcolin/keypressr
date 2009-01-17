@@ -6,4 +6,10 @@ class Language
   
   has n, :texts
 
+  before :destroy, :destroy_texts
+
+  def destroy_texts
+    self.texts.each{ |t| t.destroy }
+  end
+
 end

@@ -25,7 +25,11 @@ DONE- change Finished message depending on if the score made the top times or no
 - clean up logo: longer finger? skinnier hand?
 - favicon with "the P"
 - populate code samples on live site
-- set up production environment
+  DONE- XHTML
+  - CSS
+  - Ruby
+  - HAML
+DONE- set up production environment
 
 - link up login/signup option
 - limit addition of languages to admin user

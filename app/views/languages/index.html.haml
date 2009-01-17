@@ -1,6 +1,6 @@
 %h1 Languages
 
-- if session[:user]
+- if admin?
   %p
     = link_to "+ Add Language", "/languages/new"
 
@@ -11,4 +11,4 @@
   - for language in @languages
     %li
       = link_to "#{language.name}", url(:home, :language => language.name)
-      = "(#{language.texts.size}) - #{link_to "Destroy", "/languages/destroy/#{language.id}"}" if session[:user]
+      = "(#{language.texts.size}) - #{link_to "Destroy", "/languages/destroy/#{language.id}"}" if admin?

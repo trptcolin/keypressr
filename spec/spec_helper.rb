@@ -18,3 +18,11 @@ Spec::Runner.configure do |config|
   config.include(Merb::Test::RouteHelper)
   config.include(Merb::Test::ControllerHelper)
 end
+
+Merb::Test.add_helpers do
+  def create_default_user
+    unless User.first(:name => 'test')
+      User.create() or raise "Can't create user"
+    end
+  end
+end

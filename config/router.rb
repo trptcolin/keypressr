@@ -37,8 +37,8 @@ Merb::Router.prepare do
 
   match('/openid/login' ).to(:controller => 'open_id_profile', :action => 'login' ).name(:openid)
   match('/openid/logout' ).to(:controller => 'open_id_profile', :action => 'logout' ).name(:logout)
-  # match('/openid/register').to(:controller => 'open_id_profile', :action => 'register').name(:signup)
-  match('/openid/register').to(:controller => 'main', :action => 'index').name(:signup)
+  match('/openid/register').to(:controller => 'open_id_profile', :action => 'register').name(:signup)
+  # match('/openid/register').to(:controller => 'main', :action => 'index').name(:signup)
 
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based

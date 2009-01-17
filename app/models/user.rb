@@ -15,11 +15,16 @@ class User
   property :name, String, :nullable => false, :unique => true, :unique_index => true
   property :email, String, :unique => true, :unique_index => true
   property :identity_url, String, :unique => true, :unique_index => true
+  property :admin, Boolean, :default => false
  
   validates_format :email, :as => :email_address
 
   has n, :record_times
  
+  def admin?
+    admin
+  end
+
   def password_required?
     false
   end
