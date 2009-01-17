@@ -1,6 +1,6 @@
 class Languages < Application
 
-  before :ensure_authenticated
+  before :ensure_authenticated, :exclude => [:index]
   before :ensure_admin, :exclude => [:index]
   
   def index
