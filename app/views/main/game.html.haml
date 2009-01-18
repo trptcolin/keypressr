@@ -1,13 +1,16 @@
 - require_js "jquery.js"
 - require_js "jquery.timers.js"
 - require_js "jquery.scrollto.js"           
+- require_js "jquery.disable.text.select.pack.js"
 - require_js "keypressr.js"
+
 
 - if @example_text  
   %form#typing-test
     #wrapper
-      ~ "<pre name='test-text' id='test-text' class='code'>#{h @example_text}</pre>"
+      ~ "<pre name='test-text' id='test-text' class='code' disabled='true'>#{h @example_text}</pre>"
       #overlay
+        %img#spacer{ :src => "/images/spacer.gif" }
 
       %textarea#response-text.code{ :name => "response-text" }
   

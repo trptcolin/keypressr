@@ -69,8 +69,10 @@ $(document).ready(function(){
   $("textarea#response-text").keyup(checkForm);
   checkForm();
 
-  $("#test-text").bind("contextmenu",function(e){ return false; });
-  
+  $("#response-text").focus();
+  $("html").disableTextSelect();
+  $("#response-text").enableTextSelect();
+
   $("#time-elapsed").everyTime(1000, 'test_done', function(i) {
   	active = true;
   	
