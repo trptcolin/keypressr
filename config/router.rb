@@ -38,16 +38,9 @@ Merb::Router.prepare do
   match('/openid/login' ).to(:controller => 'open_id_profile', :action => 'login' ).name(:openid)
   match('/openid/logout' ).to(:controller => 'open_id_profile', :action => 'logout' ).name(:logout)
   match('/openid/register').to(:controller => 'open_id_profile', :action => 'register').name(:signup)
-  # match('/openid/register').to(:controller => 'main', :action => 'index').name(:signup)
 
-  # This is the default route for /:controller/:action/:id
-  # This is fine for most cases.  If you're heavily using resource-based
-  # routes, you may want to comment/remove this line to prevent
-  # clients from calling your create or destroy actions with a GET
-  match('/game').to(:controller => 'main', :action => 'game').name(:game)
-  match('/:language').to(:controller => 'main', :action => 'index').name(:home)
+  match('/game(/:language)').to(:controller => 'main', :action => 'game').name(:game)
   default_routes
   
-  # Change this for your home page to be available at /
   match('/').to(:controller => 'main', :action =>'index')
 end
