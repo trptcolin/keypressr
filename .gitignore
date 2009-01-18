@@ -1,5 +1,6 @@
 tmp/**/*
 public/attachments
+public/texts
 log/*.log
 .DS_Store
 config/database.yml
