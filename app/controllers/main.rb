@@ -7,8 +7,11 @@ class Main < Application
     render
   end
 
+  def about
+    render
+  end
+
   def game
-  
     @language = Language.first(:name => params[:language])
 
     language_conditions = ""
@@ -27,7 +30,6 @@ class Main < Application
   end
   
   def check
-    
     finished = Time.now
     @elapsed_time = finished - session[:start_time]
     @text = Text.first(:id => session[:text])

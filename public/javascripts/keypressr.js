@@ -50,7 +50,7 @@ function checkForm() {
   	active = false;
     var str = $("form").serialize();
     $.post("/main/check", str, function(data){
-        $("#results").html(data);          
+        $("#typing-test").html(data);          
     });
     $("#time-elapsed").stopTime("test_done");
     $("#time-elapsed").html("");

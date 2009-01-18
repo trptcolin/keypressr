@@ -27,6 +27,6 @@ DONE- change Finished message depending on if the score made the top times or no
 DONE- set up production environment
 
 - link up login/signup option
-- limit addition of languages to admin user
-- provide link for any user to add a text
+DONE- limit addition of languages to admin user
+- provide link for any user to submit a text (should have moderation)
 

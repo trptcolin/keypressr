@@ -11,19 +11,19 @@
   %body
     #container
       #logo
-        = link_to image_tag("/images/keypressr_logo.gif", :alt => "keypressr: type your way to the top"), "/"
+        = link_to image_tag("/images/keypressr_logo.gif", :alt => "keypressr: type your way to the top"), url(:home)
       #nav
         %ul
           %li 
-            = link_to "languages", url(:languages)
+            = link_to "Languages", url(:languages)
           %li
-            = link_to "about", "/main/about"   
+            = link_to "About", url(:about)
           - if @current_user
             - if @current_user.admin?
               %li 
-                = link_to "texts", url(:texts)
+                = link_to "Texts", url(:texts)
             %li
-              = link_to "logout #{@current_user.name}", url(:logout)
+              = link_to "Logout #{@current_user.name}", url(:logout)
       .clear
 
       = partial 'shared/messages'
@@ -32,5 +32,9 @@
     #footer
       %p
         %strong
-          Choose language:<br /> 
+          Choose language:<br />
         = partial 'shared/languages'
+      %p
+        keypressr: a typing trainer for coders.
+        site by 
+        = link_to "colin jones", "http://trptcolin.github.com"
