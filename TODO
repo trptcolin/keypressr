@@ -16,17 +16,18 @@ DONE- disable pasting text into input box / position transparent PNG over exampl
 DONE- convert tabs to spaces on text upload
 DONE- choose language to use
 DONE- change Finished message depending on if the score made the top times or not
-- style languages page
-- clean up logo: longer finger? skinnier hand?
-- favicon with "the P"
+DONE- limit addition of languages to admin user
+DONE- set up production environment
 - populate code samples on live site
   DONE- XHTML
   - CSS
   - Ruby
   - HAML
-DONE- set up production environment
+- style languages page
+- clean up logo: longer finger? skinnier hand?
+- favicon with "the P"
 
 - link up login/signup option
-DONE- limit addition of languages to admin user
 - provide link for any user to submit a text (should have moderation)
+
 
