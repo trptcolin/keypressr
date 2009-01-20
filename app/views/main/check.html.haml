@@ -21,7 +21,8 @@
     - @best_times.each do |time|
       %li
         = "<strong>" if time==@this_time
-        = time.duration
+        = time.rounded_duration
+        = "(#{time.rounded_speed} characters/second)"
         - if time.user and time.user.name
           == (#{time.user.name})
         - else

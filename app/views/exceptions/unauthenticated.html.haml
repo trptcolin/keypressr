@@ -1,8 +1,9 @@
+%h1 Login/Signup
 = form :action => url(:openid) do
   / optional hidden value used in requesting unprotected OpenID login page scenario
   = hidden_field :name => 'postLoginTargetURI', :value => resource(:texts)
 
-  = text_field :id => 'openid_url', :name => 'openid_url', :label => 'OpenID Identifier'
+  = text_field :id => 'openid_url', :name => 'openid_url', :label => 'OpenID'
 
   = submit 'Log In'
   

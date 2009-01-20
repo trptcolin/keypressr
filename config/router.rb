@@ -33,6 +33,7 @@ Merb::Router.prepare do
   resources :languages
   
   match('/about').to(:controller => 'main', :action => 'about').name(:about)
+  match('/records').to(:controller => 'main', :action => 'records').name(:records)
   # Adds the required routes for merb-auth using the password slice
   slice(:merb_auth_slice_password, :name_prefix => nil, :path_prefix => "")
 
@@ -42,7 +43,6 @@ Merb::Router.prepare do
 
   match('/game(/:language)').to(:controller => 'main', :action => 'game').name(:game)
   default_routes
-  match('/about').to(:controller => 'main', :action => 'about').name(:about)
   
   match('/').to(:controller => 'main', :action => 'index').name(:home)
 end

@@ -1,0 +1,28 @@
+%h1 
+  Best Keypressrs
+.records
+  %h1 Quickest Completion
+  %table
+    %tr
+      %th User
+      %th Time (seconds)
+    - @shortest_times.each do |time|
+      %tr
+        %td
+          = time.user ? time.user.name : "Anonymous"
+        %td
+          = time.rounded_duration
+.records
+  %h1 Fastest per Character 
+  %table
+    %tr
+      %th User
+      %th Speed (chars/sec)
+    - @fastest_times.each do |time|
+      %tr
+        %td
+          = time.user ? time.user.name : "Anonymous"
+        %td
+          = time.rounded_speed
+
+.clear

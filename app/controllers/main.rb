@@ -11,6 +11,12 @@ class Main < Application
     render
   end
 
+  def records
+    @shortest_times = RecordTime.all(:order => [:duration.asc], :limit => 15)
+    @fastest_times = RecordTime.all(:order => [:speed.desc], :limit => 15)
+    render
+  end
+
   def game
     @language = Language.first(:name => params[:language])
 

@@ -14,16 +14,21 @@
         = link_to image_tag("/images/keypressr_logo.gif", :alt => "keypressr: type your way to the top"), url(:home)
       #nav
         %ul
-          %li 
-            = link_to "Languages", url(:languages)
-          %li
-            = link_to "About", url(:about)
           - if @current_user
+            %li
+              = link_to "Logout", url(:logout)
             - if @current_user.admin?
               %li 
                 = link_to "Texts", url(:texts)
+              %li 
+                = link_to "Languages", url(:languages)
+          - else
             %li
-              = link_to "Logout #{@current_user.name}", url(:logout)
+              = link_to "Login", url(:login)
+          %li
+            = link_to "Records", url(:records)
+          %li
+            = link_to "About", url(:about)
       .clear
 
       = partial 'shared/messages'
