@@ -18,7 +18,7 @@ class Main < Application
     language_conditions << "WHERE language_id=#{@language.id} " if @language
 
     session[:text] = nil
-		rand_text = Text.find_by_sql("SELECT id FROM texts #{language_conditions}ORDER BY RAND() LIMIT 1").pop
+		rand_text = Text.find_by_sql("SELECT id FROM texts #{language_conditions}ORDER BY RAND() LIMIT 1").first
     session[:text] = rand_text.id if rand_text
 
     unless session[:text].nil?
