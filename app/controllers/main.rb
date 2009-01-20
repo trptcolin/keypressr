@@ -24,8 +24,9 @@ class Main < Application
     language_conditions << "WHERE language_id=#{@language.id} " if @language
 
     session[:text] = nil
-		rand_text = Text.find_by_sql("SELECT id FROM texts #{language_conditions}ORDER BY RAND() LIMIT 1").first
-    session[:text] = rand_text.id if rand_text
+		rand_text = repository(:default).adapter.query("SELECT id FROM texts #{language_conditions}ORDER BY RAND() LIMIT 1")
+    
+    session[:text] = rand_text.first unless rand_text.empty?
 
     unless session[:text].nil?
       @example_text = get_text
