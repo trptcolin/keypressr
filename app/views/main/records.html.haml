@@ -4,10 +4,13 @@
   %h1 Quickest Completion
   %table
     %tr
+      %th Ranking
       %th User
       %th Time (seconds)
     - @shortest_times.each do |time|
       %tr
+        %td
+          = @shortest_times.index(time) + 1
         %td
           = time.user ? time.user.name : "Anonymous"
         %td
@@ -16,10 +19,13 @@
   %h1 Fastest per Character 
   %table
     %tr
+      %th Ranking
       %th User
       %th Speed (chars/sec)
     - @fastest_times.each do |time|
       %tr
+        %td
+          = @fastest_times.index(time) + 1
         %td
           = time.user ? time.user.name : "Anonymous"
         %td
