@@ -18,6 +18,10 @@ DONE- choose language to use
 DONE- change Finished message depending on if the score made the top times or not
 DONE- limit addition of languages to admin user
 DONE- set up production environment
+DONE- link up login/signup option
+DONE- set up god monitoring for mongrel
+DONE- set up god monitoring for nginx
+DONE- set up startup task for god
 - populate code samples on live site
   DONE- XHTML
   - CSS
@@ -27,7 +31,6 @@ DONE- set up production environment
 - clean up logo: longer finger? skinnier hand?
 - favicon with "the P"
 
-- link up login/signup option
 - provide link for any user to submit a text (should have moderation)
 
 
