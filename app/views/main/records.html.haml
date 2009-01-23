@@ -7,12 +7,12 @@
       %th Ranking
       %th User
       %th Time (seconds)
-    - @shortest_times.each do |time|
+    - @shortest_times.each_with_index do |time, i|
       %tr
         %td
-          = @shortest_times.index(time) + 1
+          = i + 1
         %td
-          = time.user ? time.user.name : "Anonymous"
+          = time.user_name
         %td
           = time.rounded_duration
 .records
@@ -22,12 +22,12 @@
       %th Ranking
       %th User
       %th Speed (chars/sec)
-    - @fastest_times.each do |time|
+    - @fastest_times.each_with_index do |time, i|
       %tr
         %td
-          = @fastest_times.index(time) + 1
+          = i + 1
         %td
-          = time.user ? time.user.name : "Anonymous"
+          = time.user_name
         %td
           = time.rounded_speed
 

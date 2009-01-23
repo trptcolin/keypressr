@@ -29,4 +29,13 @@ class RecordTime
       "N/A"
     end
   end
+
+  def user_name
+    if self.user
+      user.display_name
+    else
+      "Anonymous"
+    end
+  end
+
 end
