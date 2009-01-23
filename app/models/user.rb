@@ -12,12 +12,13 @@ class User
   include DataMapper::Resource
  
   property :id, Serial
-  property :name, String, :nullable => false, :unique => true, :unique_index => true
-  property :email, String, :unique => true, :unique_index => true
-  property :identity_url, String, :unique => true, :unique_index => true
+#  property :name, String, :nullable => false, :unique => true, :unique_index => true
+  property :name, String, :nullable => true, :default => nil
+  property :email, String, :nullable => true, :default => nil
+  property :identity_url, String, :nullable => false, :unique => true, :unique_index => true
   property :admin, Boolean, :default => false
  
-  validates_format :email, :as => :email_address
+#  validates_format :email, :as => :email_address
 
   has n, :record_times
  

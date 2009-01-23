@@ -3,15 +3,12 @@ class OpenIdProfile < Application
   before :ensure_openid_url, :only => [ :register ]
  
   def login
-    # if the user is logged in, then redirect them to their profile
-    message[:notice] = 'You are now logged in.'
-    redirect resource(session.user)
+    redirect "/", :message => { :notice => "I see you're back for more. Good luck and good pressin'!" }
   end
  
   def logout
     session[:user] = nil
-    message[:notice] = 'You are now logged out.'
-    redirect "/"
+    redirect "/", :message => { :notice => "We'll miss you! Press again soon!" }
   end
  
   def register
@@ -22,17 +19,17 @@ class OpenIdProfile < Application
     }
  
     @user = Merb::Authentication.user_class.first_or_create(
-      attributes.only(:identity_url),
-      attributes.only(:name, :email)
+      attributes.only(:identity_url, :name, :email)
     )
- 
+    debugger
+
     if @user.update_attributes(attributes)
       session.user = @user
-      redirect resource(session.user), :message => { :success => 'Signup was successful', :notice => 'You are now logged in' }
+      redirect "/", :message => { :success => 'Signup was successful', :notice => "Welcome! Get to pressin'!" }
     else
-      message[:error] = 'There was an error while creating your user account'
-      render :template => '/', :status => 422
+      render :template => "/", :status => 422, :message => { :notice => 'There was an error while creating your user account' }
     end
+
   end
  
   private
