@@ -23,9 +23,6 @@
         = "<strong>" if time==@this_time
         = time.rounded_duration
         = "(#{time.rounded_speed} characters/second)"
-        - if time.user and time.user.name
-          == (#{time.user.name})
-        - else
-          (Anonymous)
+        = time.user_name
         = "</strong>" if time==@this_time
       

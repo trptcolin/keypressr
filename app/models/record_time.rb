@@ -1,9 +1,13 @@
+require 'dm-timestamps'
+
 class RecordTime
   include DataMapper::Resource
   
   property :id, Serial
   property :duration, Float
   property :speed, Float
+  property :created_at, DateTime
+  property :updated_at, DateTime
   
   belongs_to :user
   belongs_to :text

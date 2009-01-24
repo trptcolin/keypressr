@@ -9,7 +9,7 @@ class Application < Merb::Controller
   end
   
   def get_languages_with_code
-    @languages = Language.all(:order => [:name.asc], :links => [:texts])
+    @languages = Language.all(:order => [:name.asc], :links => [:texts]).uniq
   end
 
   def get_current_user
