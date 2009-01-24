@@ -9,7 +9,7 @@ class Application < Merb::Controller
   end
   
   def get_languages_with_code
-    @languages = Language.all.sort_by{|l| l.name}.uniq.delete_if{|l| l.texts.empty?}
+    @languages = Language.all(:order => [:name.asc], :links => [:texts])
   end
 
   def get_current_user
