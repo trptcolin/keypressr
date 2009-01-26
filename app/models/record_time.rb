@@ -14,6 +14,9 @@ class RecordTime
 
   before :save, :set_speed
 
+  validates_present :duration
+  validates_present :speed
+
   def set_speed
     self.speed = self.text.attachment_file_size / self.duration
   end
