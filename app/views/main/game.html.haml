@@ -8,13 +8,13 @@
 - if @example_text  
   %form#typing-test
     #wrapper
-      ~ "<pre name='test-text' id='test-text' class='code' disabled='true'>#{h @example_text}</pre>"
+      ~ "<pre name='test-text' id='test-text' class='code' disabled='true'>#{html_escape @example_text}</pre>"
       #overlay
         %img#spacer{ :src => "/images/spacer.gif" }
 
       %textarea#response-text.code{ :name => "response-text" }
   
-    %input#example-text{:type => 'hidden', :value => @example_text} 
+    %input#example-text{:type => 'hidden', :value => html_escape(@example_text)} 
     
     #results
 

@@ -15,7 +15,6 @@ function checkForm() {
   var example_text = $("#example-text").val();
 	example_text = example_text.replace(/[ \t]+(\r\n|[\r\n])/g, "$1");
 
-  
   var shortest = ((example_text.length < text_received.length) ? example_text : text_received);
   
   for(i = 0; i < shortest.length; i++){
@@ -37,13 +36,13 @@ function checkForm() {
     example_text_first = "";
     example_text_last = example_text;
   }
-  
-  example_text_first = example_text_first.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  example_text_last = example_text_last.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  
+
+  example_text_first = example_text_first.replace(/\&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  example_text_last = example_text_last.replace(/\&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
   example_text = correct_start + example_text_first + correct_end + example_text_last + "</span>";
 
-  $("#test-text").html(example_text);  
+  $("#test-text").html(example_text);
   $("#test-text").scrollTo(".incorrect", {offset: -50});
   
   if(active && example_text_last.match(/^\s*$/)){

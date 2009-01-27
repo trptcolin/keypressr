@@ -14,7 +14,7 @@ class Text
   validates_attachment_presence :attachment
   validates_with_method :check_line_length
 
-  before :create, :eliminate_tabs
+  before :create, :normalize_text
 
 	def check_line_length
     if attachment.to_file.detect{|l| l.length > 80}
@@ -24,7 +24,7 @@ class Text
     end
   end
  
-  def eliminate_tabs
+  def normalize_text
     return false if self.attachment.nil?
     File.open(self.attachment.to_file.path, 'r+') do |f|
       out = ""
