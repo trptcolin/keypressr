@@ -69,8 +69,7 @@ $(document).ready(function(){
   checkForm();
 
   $("#response-text").focus();
-  $("html").disableTextSelect();
-  $("#response-text").enableTextSelect();
+  $("#test-text").disableTextSelect();
 
   $("#time-elapsed").everyTime(1000, 'test_done', function(i) {
   	active = true;
