@@ -25,6 +25,11 @@ DONE- set up startup task for god
 DONE- fix problem with HTML entity on live file (& prevent from happening again)
 DONE- allow selecting on text input
 - get current situation under specs
+  - models:
+    - RecordTime
+    - Language
+    - Text
+    - User
 - populate code samples on live site
   DONE- XHTML
   - CSS
