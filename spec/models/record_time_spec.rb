@@ -17,4 +17,10 @@ describe RecordTime do
     record_time.should_not be_valid
     record_time.errors[:speed].should_not be_nil
   end
+
+  it "should have a timestamp" do 
+    record_time = new_record(:created_at => nil)
+    record_time.should_not be_valid
+    record_time.errors[:created_at].should_not be_nil
+  end
 end
