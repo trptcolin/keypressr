@@ -8,6 +8,8 @@ class Language
 
   before :destroy, :destroy_texts
 
+  validates_present :name
+
   def destroy_texts
     self.texts.each{ |t| t.destroy }
   end
